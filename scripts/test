@@ -1,0 +1,32 @@
+#!/bin/bash
+
+set -e
+
+if [[ -n "${CI}" ]]; then
+    set -x
+fi
+
+set -u
+
+function usage() {
+    echo -n \
+"Usage: $(basename "$0")
+Test container images built from templates.
+"
+}
+
+if [ "${BASH_SOURCE[0]}" = "${0}" ]; then
+    if [ "${1:-}" = "--help" ]; then
+        usage
+    else
+
+        docker run --rm -it \
+         "quay.io/azavea/terraform:${TERRAFORM_VERSION}" --help \
+         | grep "Usage: terraform"
+
+        docker run --rm -it --entrypoint pip \
+         "quay.io/azavea/terraform:${TERRAFORM_VERSION}" show awscli \
+         | grep "awscli"
+
+    fi
+fi

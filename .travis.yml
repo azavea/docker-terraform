@@ -1,0 +1,20 @@
+sudo: required
+
+language: bash
+services: docker
+
+env:
+  - TERRAFORM_VERSION=0.9.1
+  - TERRAFORM_VERSION=0.9.6
+  - TERRAFORM_VERSION=0.9.8
+  - TERRAFORM_VERSION=latest
+
+script:
+  - ./scripts/cibuild
+
+deploy:
+  - provider: script
+    script: "scripts/cipublish"
+    on:
+      repo: azavea/docker-terraform
+      branch: master
