@@ -1,0 +1,9 @@
+FROM hashicorp/terraform:%%TERRAFORM_VERSION%%
+MAINTAINER Azavea <systems@azavea.com>
+
+RUN \
+    apk add --no-cache \
+        bash \
+        python3 \
+        py-pip \
+    && pip install awscli
