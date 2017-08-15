@@ -20,3 +20,8 @@ deploy:
     on:
       repo: azavea/docker-terraform
       branch: master
+  - provider: script
+    script: "scripts/cipublish"
+    on:
+      repo: azavea/docker-terraform
+      branch: tnation/terraform-0.9.3
