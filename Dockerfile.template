@@ -4,6 +4,8 @@ MAINTAINER Azavea <systems@azavea.com>
 RUN \
     apk add --no-cache \
         bash \
+        make \
         python3 \
         py-pip \
+        zip \
     && pip install awscli
