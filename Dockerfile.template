@@ -4,6 +4,7 @@ MAINTAINER Azavea <systems@azavea.com>
 RUN \
     apk add --no-cache \
         bash \
+        jq \
         make \
         python3 \
         py-pip \
