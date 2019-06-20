@@ -1,5 +1,4 @@
 FROM hashicorp/terraform:%%TERRAFORM_VERSION%%
-MAINTAINER Azavea <systems@azavea.com>
 
 RUN \
     apk add --no-cache \
