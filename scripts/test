@@ -21,12 +21,9 @@ if [ "${BASH_SOURCE[0]}" = "${0}" ]; then
     else
 
         docker run --rm -it \
-         "quay.io/azavea/terraform:${TERRAFORM_VERSION}" --help \
-         | grep "Usage: terraform"
+         "quay.io/azavea/terraform:${TERRAFORM_VERSION}" --version
 
-        docker run --rm -it --entrypoint pip \
-         "quay.io/azavea/terraform:${TERRAFORM_VERSION}" show awscli \
-         | grep "awscli"
-
+        docker run --rm -it --entrypoint aws \
+         "quay.io/azavea/terraform:${TERRAFORM_VERSION}" --version
     fi
 fi
