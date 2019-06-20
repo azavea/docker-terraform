@@ -12,6 +12,7 @@ env:
   - TERRAFORM_VERSION=0.11.7
   - TERRAFORM_VERSION=0.11.11
   - TERRAFORM_VERSION=latest
+  - TERRAFORM_VERSION=0.12.2
 
 script:
   - ./scripts/cibuild
