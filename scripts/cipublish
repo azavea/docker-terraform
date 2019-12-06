@@ -5,7 +5,7 @@ set -u
 
 function usage() {
     echo -n \
-"Usage: $(basename "$0")
+        "Usage: $(basename "$0")
 Publish container images built from templates.
 "
 }
