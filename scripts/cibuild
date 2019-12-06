@@ -10,7 +10,7 @@ set -u
 
 function usage() {
     echo -n \
-"Usage: $(basename "$0")
+        "Usage: $(basename "$0")
 Build container images from templates.
 "
 }
@@ -21,11 +21,10 @@ if [ "${BASH_SOURCE[0]}" = "${0}" ]; then
     else
 
         sed -e "s/%%TERRAFORM_VERSION%%/${TERRAFORM_VERSION}/" \
-            "Dockerfile.template" > Dockerfile
+            "Dockerfile.template" >Dockerfile
 
         docker \
             build -t "quay.io/azavea/terraform:${TERRAFORM_VERSION}" .
-
 
         ./scripts/test
 
