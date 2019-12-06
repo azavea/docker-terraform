@@ -6,6 +6,5 @@ RUN \
         jq \
         make \
         python3 \
-        py-pip \
         zip \
-    && pip install awscli
+    && pip3 install awscli
