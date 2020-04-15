@@ -7,4 +7,5 @@ RUN \
         make \
         python3 \
         zip \
+        curl \
     && pip3 install awscli
