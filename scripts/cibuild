@@ -1,12 +1,11 @@
 #!/bin/bash
 
 set -e
+set -u
 
 if [[ -n "${CI}" ]]; then
     set -x
 fi
-
-set -u
 
 function usage() {
     echo -n \
@@ -15,8 +14,8 @@ Build container images from templates.
 "
 }
 
-if [ "${BASH_SOURCE[0]}" = "${0}" ]; then
-    if [ "${1:-}" = "--help" ]; then
+if [[ "${BASH_SOURCE[0]}" == "$0" ]]; then
+    if [[ "${1:-}" == "--help" ]]; then
         usage
     else
 
