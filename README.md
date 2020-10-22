@@ -13,5 +13,5 @@ This repository contains a templated `Dockerfile` for image variants designed to
 An example of how to use `cibuild` to build and test an image:
 
 ```bash
-$ CI=1 TERRAFORM_VERSION=0.12.29 ./scripts/cibuild
+$ CI=1 TERRAFORM_VERSION=0.13.5 ./scripts/cibuild
 ```
