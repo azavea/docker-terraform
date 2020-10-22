@@ -3,6 +3,10 @@
 set -e
 set -u
 
+if [[ -n "${CI}" ]]; then
+    set -x
+fi
+
 function usage() {
     echo -n \
         "Usage: $(basename "$0")
@@ -10,8 +14,8 @@ Publish container images built from templates.
 "
 }
 
-if [ "${BASH_SOURCE[0]}" = "${0}" ]; then
-    if [ "${1:-}" = "--help" ]; then
+if [[ "${BASH_SOURCE[0]}" == "$0" ]]; then
+    if [[ "${1:-}" == "--help" ]]; then
         usage
     else
         docker \

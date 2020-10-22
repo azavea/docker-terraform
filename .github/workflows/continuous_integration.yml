@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        terraform_version: ["0.11.11", "0.12.2", "0.12.13", "0.12.29"]
+    env:
+      DOCKER_BUILDKIT: 1
+      TERRAFORM_VERSION: ${{ matrix.terraform_version }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - run: ./scripts/cibuild
+
+      - run: ./scripts/cipublish
+        if: github.ref == 'refs/heads/master'
+        env:
+          QUAY_USER: ${{ secrets.QUAY_IMAGES_USER }}
+          QUAY_PASSWORD: ${{ secrets.QUAY_IMAGES_PASSWORD }}

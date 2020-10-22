@@ -1,4 +1,4 @@
-# docker-terraform [![Travis (.org) branch](https://img.shields.io/travis/azavea/docker-terraform/master)](https://travis-ci.org/azavea/docker-terraform) [![Docker Repository on Quay](https://quay.io/repository/azavea/terraform/status "Docker Repository on Quay")](https://quay.io/repository/azavea/terraform)
+# docker-terraform [![CI](https://github.com/azavea/docker-terraform/workflows/CI/badge.svg?branch=master)](https://github.com/azavea/docker-terraform/actions?query=workflow%3ACI) [![Docker Repository on Quay](https://quay.io/repository/azavea/terraform/status "Docker Repository on Quay")](https://quay.io/repository/azavea/terraform)
 
 This repository contains a templated `Dockerfile` for image variants designed to run deployments using the AWS CLI and `terraform`.
 
